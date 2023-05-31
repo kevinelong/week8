@@ -42,15 +42,20 @@ function whatday(num) {
   
 }
 
-const Test = require('@codewars/test-compat');
+console.log(whatday(1) === 'Sunday')
+console.log(whatday(2) === 'Monday')
+console.log(whatday(3) === 'Tuesday')
+console.log(whatday(8) === 'Wrong, please enter a number between 1 and 7')
+console.log(whatday(30) === 'Wrong, please enter a number between 1 and 7')
+// const Test = require('@codewars/test-compat');
 
-describe( "whatday", function(){
-  it( "should work for the examples" , function(){
-    Test.assertEquals(whatday(1),'Sunday')
-    Test.assertEquals(whatday(2), 'Monday')
-    Test.assertEquals(whatday(3),'Tuesday')
-       Test.assertEquals(whatday(8),  'Wrong, please enter a number between 1 and 7')
-    Test.assertEquals(whatday(20),  'Wrong, please enter a number between 1 and 7')
+// describe( "whatday", function(){
+//   it( "should work for the examples" , function(){
+//     Test.assertEquals(whatday(1),'Sunday')
+//     Test.assertEquals(whatday(2), 'Monday')
+//     Test.assertEquals(whatday(3),'Tuesday')
+//        Test.assertEquals(whatday(8),  'Wrong, please enter a number between 1 and 7')
+//     Test.assertEquals(whatday(20),  'Wrong, please enter a number between 1 and 7')
 
-      });
-});
+//       });
+// });
