@@ -1,18 +1,16 @@
-<body style="background:black;"></body>
-<script>
-
-    document.body.innerHTML = `
+<body style="background:black;">
     <div id="box" style="border: 1rem solid white; width: 32rem; height: 24rem;">
         <div id="ball" style="background: white; width: 1rem; height: 1rem;"></div>
-    </div>`;
-    
+    </div>
+</body>
+<script>
     const state = {
         box: { width: 32, height: 24 },
         ball: { x: 0, y: 0, dx: 1, dy: 1 }
     };
     
     function collisions() {
-        let next = {
+        const next = {
             x: state.ball.x + state.ball.dx,
             y: state.ball.y + state.ball.dy
         }
@@ -24,7 +22,9 @@
         if (next.y >= state.box.height || next.y < 0) {
             state.ball.dy = -state.ball.dy;
         }
-    
+    }
+
+    function move(){
         state.ball.x += state.ball.dx;
         state.ball.y += state.ball.dy;
     }
@@ -36,6 +36,7 @@
     
     function loop() {
         collisions()
+        move()
         render()
         setTimeout(loop, 40);        // or window.requestAnimationFrame(loop)
     }
