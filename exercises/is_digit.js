@@ -16,7 +16,6 @@ isDigit("zero")
 
 */
 function isDigit(s) {
-    //your code
 
     //ignore spaces outside
     s= s.trim()
@@ -25,15 +24,15 @@ function isDigit(s) {
         return false;
     }
 
-    // //reject spaces inside
-    // if(s.includes(" ")){
-    //     return false;
-    // }
-
     //reject minus inside
     if(s.indexOf("-", 1) != - 1){
         return false;
     }
+
+    // //reject spaces inside - nice but also caught by isNaN
+    // if(s.includes(" ")){
+    //     return false;
+    // }
 
     return !isNaN(s);
   }
