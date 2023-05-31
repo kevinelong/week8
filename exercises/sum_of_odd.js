@@ -14,27 +14,28 @@ Calculate the sum of the numbers in the nth row of this triangle (starting at in
 2 --> 3 + 5 = 8
 
 */
-function total(list){
+function total(list) {
     let subtotal = 0;
     list.forEach(v => subtotal += v);
     return subtotal;
 }
 
 function rowSumOddNumbers(n) {
-	// TODO
-  let rows = [];
-  let e = 1;
-  for(let r = 0; r < n; r++){
-    let row = [];
-    while(row.length < r+1){
-      row.push(e)
-      e += 2
+    // TODO
+    let rows = [];
+    let e = 1;
+    for (let r = 0; r < n; r++) {
+        let row = [];
+        while (row.length < r + 1) {
+            row.push(e)
+            e += 2
+        }
+        rows.push(row)
+        console.log(row.join())
     }
-    rows.push(row)
-  }
 
-  console.log(rows)
-  return total(rows[n-1])
+    console.log(rows)
+    return total(rows[n - 1])
 }
 
 console.log(rowSumOddNumbers(1))
