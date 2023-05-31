@@ -1,0 +1,55 @@
+<style>
+    body {
+        background: black;
+        color: white
+    }
+
+    #box {
+        border: 1rem solid white;
+        width: 32rem;
+        height: 24rem;
+    }
+
+    #ball {
+        width: 1rem;
+        height: 1rem;
+        background-color: white;
+        /* transition: all 20ms; */
+    }
+</style>
+
+<body>
+    <div id="box">
+        <div id="ball">O</div>
+    </div>
+</body>
+<script>
+    const state = {
+        box: { width: 32, height: 24 },
+        ball: { x: 0, y: 0, dx: 1, dy: 1 }
+    };
+    function collisions() {
+        let next = {
+            x: state.ball.x + state.ball.dx,
+            y: state.ball.y + state.ball.dy
+        }
+        if (next.x >= state.box.width || next.x < 0) {
+            state.ball.dx = -state.ball.dx;
+        }
+        if (next.y >= state.box.height || next.y < 0) {
+            state.ball.dy = -state.ball.dy;
+        }
+        state.ball.x += state.ball.dx;
+        state.ball.y += state.ball.dy;
+    }
+    function render() {
+        ball.style.marginLeft = state.ball.x + "rem";
+        ball.style.marginTop = state.ball.y + "rem";
+    }
+    function loop() {
+        collisions()
+        render()
+        setTimeout(loop, 40);        // or window.requestAnimationFrame(loop)
+    }
+    loop();
+</script>
