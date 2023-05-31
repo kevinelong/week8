@@ -43,6 +43,7 @@ console.log(isDigit("3-4") === false ? "PASS" : "FAIL: " + s);
 console.log(isDigit("  3   5") === false ? "PASS" : "FAIL: " + s);
 console.log(isDigit("3 5") === false ? "PASS" : "FAIL: " + s);
 console.log(isDigit("zero") === false ? "PASS" : "FAIL: " + s);
+console.log(isDigit("") === false ? "PASS" : "FAIL: " + s);
 
 console.log(isDigit("-234.4") === true ? "PASS" : "FAIL: " + s);
 console.log(isDigit("3") === true ? "PASS" : "FAIL: " + s);
