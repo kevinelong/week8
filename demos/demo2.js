@@ -32,7 +32,7 @@ it("Basic tests",function() {
     Test.assertEquals(printerError(s), "3/56")
 })})
 */
-function isOutOfRange(c){
+function isOutOfRange(c) {
     const VALID_RANGE = "abcdefghijklm";
     return !VALID_RANGE.includes(c);
 }
@@ -42,17 +42,19 @@ function printerError(s) {
     //convert string to list of letters?
     //loop through list
     const size = s.length;
-    for(let i =0; i < size; i++){
+    for (let i = 0; i < size; i++) {
         let c = s[i]; //s.charAt(i)
         //see if letter is in range (define the valid range)
-        if(isOutOfRange(c)){
+        if (isOutOfRange(c)) {
             outOfRange++;
         }
         //outOfRange += isOutOfRange(c) ? 1 : 0; //shorter but less clear
     }
     return outOfRange + "/" + size;
 }
+// or unclear CODE GOLF - ONE LINER
+printerError = s => [...s].filter(c => c > 'm').length + '/' + s.length;
 
-var s="aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"
+var s = "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"
 const result = printerError(s);
 console.log(result === "3/56" ? "PASS" : "FAIL: " + result);
