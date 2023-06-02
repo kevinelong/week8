@@ -9,12 +9,12 @@ let original = [
 // }
 // 
 // write a function that converts the original data into the desired FormData.apply
-function convertListToDict(list, key){
+function convertListToDict(list, word){
     let results = {};
     for(let i = 0; i < list.length; i++){
         item = list[i];
         //remove old id key?
-        results[item[key]] = item;
+        results[item[word]] = item;
     }
     return results
 }
