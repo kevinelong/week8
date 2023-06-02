@@ -6,7 +6,7 @@
 <script>
     const state = {
         box: { width: 32, height: 24 },
-        ball: { x: 0, y: 0, dx: 1, dy: 1 }
+        ball: { x: 16, y: 12, dx: -1, dy: -1 }
     };
     
     function collisions() {
@@ -38,7 +38,7 @@
         collisions()
         move()
         render()
-        setTimeout(loop, 40);        // or window.requestAnimationFrame(loop)
+        setTimeout(loop, 20);        // or window.requestAnimationFrame(loop)
     }
     
     loop();
