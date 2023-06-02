@@ -1,0 +1,57 @@
+<!--
+    Create a page that shows a large number zero and has two buttons,
+    one button makes the number go up by one, the other makes it go down by one.
+-->
+<style>
+    *{
+        font-size: 40vh;
+        text-align: center;
+    }
+    button{
+        width: 40vw;        
+        font-size: 20vh;
+    }
+</style>
+<body>
+    <div id="output">0</div>
+    <button id="up">+</button>
+    <button id="down">-</button>
+</body>
+<script>
+    let number = 0;
+    function increment(){
+        if(number < 25){
+            number += 5;
+        }
+    }
+    function decrement(){
+        if(number > 0 ){
+            number -= 5;
+        }
+    }
+    increment()
+    increment()
+    increment()
+    increment()
+    increment()
+    increment()
+    console.log(number === 25)
+    decrement()
+    decrement()
+    decrement()
+    decrement()
+    decrement()
+    decrement()
+    decrement()
+    console.log(number === 0)
+
+    up.addEventListener("click", ()=> {
+        increment()
+        output.innerHTML = number;
+    });
+
+    down.addEventListener("click", ()=> {
+        decrement();
+        output.innerHTML = number;
+    });
+</script>
